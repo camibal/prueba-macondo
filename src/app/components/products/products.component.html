@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+        <div class="form-group p-5">
+            <input type="text" class="form-control" [(ngModel)]="userSearch" placeholder="Filter">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="scroll">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Pdf</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products | filter: userSearch">
+                    <th scope="row">{{ product.id }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.address }}</td>
+                    <td>{{ product.city }}</td>
+                    <td>{{ product.pdf }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
