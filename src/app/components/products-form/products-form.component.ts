@@ -19,7 +19,6 @@ export class ProductsFormComponent implements OnInit {
 
   getProductsApi() {
     this.productsService.getProducts().subscribe(res => {
-      console.log(res);
       this.productsApi = res;
     }, err => {
       console.log(err);
